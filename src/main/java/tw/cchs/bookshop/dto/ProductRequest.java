@@ -26,15 +26,6 @@ public class ProductRequest {
 
     }
 
-    public ProductRequest(String productName, ProductCategory category, String imageUrl, Integer price, Integer stock, String description) {
-        this.productName = productName;
-        this.category = category;
-        this.imageUrl = imageUrl;
-        this.price = price;
-        this.stock = stock;
-        this.description = description;
-    }
-
     public String getProductName() {
         return productName;
     }
@@ -81,18 +72,6 @@ public class ProductRequest {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "ProductRequest{" +
-                "productName='" + productName + '\'' +
-                ", category=" + category +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", price=" + price +
-                ", stock=" + stock +
-                ", description='" + description + '\'' +
-                '}';
     }
 
 }
