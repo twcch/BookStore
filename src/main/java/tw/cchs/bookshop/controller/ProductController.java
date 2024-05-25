@@ -9,6 +9,8 @@ import tw.cchs.bookshop.dto.ProductRequest;
 import tw.cchs.bookshop.model.Product;
 import tw.cchs.bookshop.service.ProductService;
 
+import java.util.List;
+
 @RestController
 public class ProductController {
 
@@ -23,6 +25,15 @@ public class ProductController {
         Product product = productService.getProductById(productId);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(product);
+
+    }
+
+    @GetMapping("/products")
+    public ResponseEntity<List<Product>> getProducts() {
+
+        List<Product> productList = productService.getProducts();
+
+        return ResponseEntity.status(HttpStatus.OK).body(productList);
 
     }
 

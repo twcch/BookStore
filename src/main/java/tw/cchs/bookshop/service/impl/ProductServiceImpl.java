@@ -7,6 +7,8 @@ import tw.cchs.bookshop.dto.ProductRequest;
 import tw.cchs.bookshop.model.Product;
 import tw.cchs.bookshop.service.ProductService;
 
+import java.util.List;
+
 @Component
 public class ProductServiceImpl implements ProductService {
 
@@ -20,6 +22,14 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
+    @Override
+    public List<Product> getProducts() {
+
+        return productDao.getProducts();
+
+    }
+
+    @Override
     public Product getProductById(Integer productId) {
 
         return productDao.getProductById(productId);
