@@ -2,6 +2,7 @@ package tw.cchs.bookshop.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import tw.cchs.bookshop.constant.ProductCategory;
 import tw.cchs.bookshop.dao.ProductDao;
 import tw.cchs.bookshop.dto.ProductRequest;
 import tw.cchs.bookshop.model.Product;
@@ -23,9 +24,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProducts() {
+    public List<Product> getProducts(ProductCategory category, String search) {
 
-        return productDao.getProducts();
+        return productDao.getProducts(category, search);
 
     }
 

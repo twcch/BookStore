@@ -1,5 +1,6 @@
 package tw.cchs.bookshop.service;
 
+import tw.cchs.bookshop.constant.ProductCategory;
 import tw.cchs.bookshop.dto.ProductRequest;
 import tw.cchs.bookshop.model.Product;
 
@@ -9,7 +10,7 @@ public interface ProductService {
 
     public Integer createProduct(ProductRequest productRequest);
 
-    public List<Product> getProducts();
+    public List<Product> getProducts(ProductCategory category, String search);
 
     public Product getProductById(Integer productId);
 
