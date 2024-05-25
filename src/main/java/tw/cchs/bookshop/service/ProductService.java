@@ -10,9 +10,9 @@ public interface ProductService {
 
     public Integer createProduct(ProductRequest productRequest);
 
-    public List<Product> getProducts(ProductQueryParams productQueryParams);
-
     public Product getProductById(Integer productId);
+
+    public List<Product> getProducts(ProductQueryParams productQueryParams);
 
     public Integer countProduct(ProductQueryParams productQueryParams);
 

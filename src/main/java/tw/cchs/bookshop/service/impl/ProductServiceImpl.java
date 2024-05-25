@@ -24,16 +24,16 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProducts(ProductQueryParams productQueryParams) {
+    public Product getProductById(Integer productId) {
 
-        return productDao.getProducts(productQueryParams);
+        return productDao.getProductById(productId);
 
     }
 
     @Override
-    public Product getProductById(Integer productId) {
+    public List<Product> getProducts(ProductQueryParams productQueryParams) {
 
-        return productDao.getProductById(productId);
+        return productDao.getProducts(productQueryParams);
 
     }
 
