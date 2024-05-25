@@ -1,6 +1,6 @@
 package tw.cchs.bookshop.dao;
 
-import tw.cchs.bookshop.constant.ProductCategory;
+import tw.cchs.bookshop.dto.ProductQueryParams;
 import tw.cchs.bookshop.dto.ProductRequest;
 import tw.cchs.bookshop.model.Product;
 
@@ -10,7 +10,7 @@ public interface ProductDao {
 
     public Integer createProduct(ProductRequest productRequest);
 
-    public List<Product> getProducts(ProductCategory category, String search);
+    public List<Product> getProducts(ProductQueryParams productQueryParams);
 
     public Product getProductById(Integer productId);
 
