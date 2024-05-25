@@ -3,6 +3,7 @@ package tw.cchs.bookshop.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import tw.cchs.bookshop.dao.ProductDao;
+import tw.cchs.bookshop.dto.ProductRequest;
 import tw.cchs.bookshop.model.Product;
 import tw.cchs.bookshop.service.ProductService;
 
@@ -11,6 +12,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductDao productDao;
+
+    @Override
+    public Integer createProduct(ProductRequest productRequest) {
+
+        return productDao.createProduct(productRequest);
+
+    }
 
     public Product getProductById(Integer productId) {
 
