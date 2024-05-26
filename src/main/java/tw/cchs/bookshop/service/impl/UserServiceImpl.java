@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 import tw.cchs.bookshop.dao.UserDao;
+import tw.cchs.bookshop.dto.UserLoginRequest;
 import tw.cchs.bookshop.dto.UserRegisterRequest;
 import tw.cchs.bookshop.model.User;
 import tw.cchs.bookshop.service.UserService;
@@ -32,6 +33,27 @@ public class UserServiceImpl implements UserService {
 
         // 創建帳號
         return userDao.createUser(userRegisterRequest);
+
+    }
+
+    @Override
+    public User login(UserLoginRequest userLoginRequest) {
+
+        User user = userDao.getUserByEmail(userLoginRequest.getEmail());
+
+        // 檢查帳號
+        if (user == null) {
+            log.warn("該 email {} 尚未註冊", userLoginRequest.getEmail());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+
+        // 檢查密碼
+        if (!user.getPassword().equals(userLoginRequest.getPassword())) {
+            log.warn("該 email {} 的密碼不正確", userLoginRequest.getEmail());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+
+        return user;
 
     }
 
