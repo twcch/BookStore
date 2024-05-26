@@ -9,4 +9,6 @@ public interface UserService {
 
     public User getUserById(Integer userId);
 
+    public User getUserByEmail(String email);
+
 }
