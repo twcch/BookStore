@@ -69,7 +69,7 @@ public class OrderDaoImpl implements OrderDao {
 
         // 使用 batchUpdate 一次性加入數據，效率更高
         String sql = "INSERT INTO order_item (order_id, product_id, quantity, amount) " +
-                "VALUES (orderId, :orderId, :productId, :quantity, :amount)";
+                "VALUES (:orderId, :productId, :quantity, :amount)";
 
         MapSqlParameterSource[] mapSqlParameterSources = new MapSqlParameterSource[orderItems.size()];
 
@@ -111,8 +111,8 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public List<OrderItem> getOrderItemsByOrderId(Integer orderId) {
 
-        String sql = "SELECT oi.order_item_id, oi.order_id, oi.product_id, oi.quantity, oi.amount, p.product_name, p.image_url " +
-                "FROM order_item as oi " +
+        String sql = "SELECT oi.order_item_id, oi.order_id, oi.product_id, oi.quantity, oi.amount, p.product_name, " +
+                "p.image_url FROM order_item as oi " +
                 "LEFT JOIN product as p ON oi.product_id = p.product_id " +
                 "WHERE oi.order_id = :orderId";
 

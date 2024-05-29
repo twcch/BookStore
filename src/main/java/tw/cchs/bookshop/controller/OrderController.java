@@ -24,7 +24,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/users/{userId}/orders")
-    public ResponseEntity<Integer> createOrder(@PathVariable Integer userId,
+    public ResponseEntity<?> createOrder(@PathVariable Integer userId,
                                                @RequestBody @Valid CreateOrderRequest createOrderRequest) {
 
         Integer orderId = orderService.createOrder(userId, createOrderRequest);
@@ -36,7 +36,7 @@ public class OrderController {
     @GetMapping("/users/{userId}/orders")
     public ResponseEntity<Page<Order>> getOrders(@PathVariable Integer userId,
                                                  @RequestParam(defaultValue = "10") @Max(1000) @Min(0) Integer limit,
-                                                 @RequestParam(defaultValue = "5") @Min(0) Integer offset) {
+                                                 @RequestParam(defaultValue = "0") @Min(0) Integer offset) {
 
         OrderQueryParams orderQueryParams = new OrderQueryParams();
         orderQueryParams.setUserId(userId);
@@ -46,7 +46,7 @@ public class OrderController {
         // 取得 order list
         List<Order> orderList = orderService.getOrders(orderQueryParams);
 
-        // 取的 order 總數
+        // 取得 order 總數
         Integer count = orderService.countOrder(orderQueryParams);
 
         // 分頁
@@ -54,7 +54,7 @@ public class OrderController {
         page.setLimit(limit);
         page.setOffset(offset);
         page.setTotal(count);
-        page.setResult(orderList);
+        page.setResults(orderList);
 
         return ResponseEntity.status(HttpStatus.OK).body(page);
 
