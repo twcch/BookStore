@@ -45,7 +45,7 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public void creatOrderItems(Integer orderId, List<OrderItem> orderItems) {
+    public void createOrderItems(Integer orderId, List<OrderItem> orderItems) {
 
 //        // 使用 for loop 一條一條 sql 加入數據，效率較低
 //        for (OrderItem orderItem : orderItems) {

@@ -8,6 +8,6 @@ public interface OrderDao {
 
     public Integer createOrder(Integer userId, Integer totalAmount);
 
-    public void creatOrderItems(Integer orderId, List<OrderItem> orderItems);
+    public void createOrderItems(Integer orderId, List<OrderItem> orderItems);
 
 }
