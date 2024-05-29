@@ -12,6 +12,8 @@ import tw.cchs.bookshop.dao.ProductDao;
 import tw.cchs.bookshop.dao.UserDao;
 import tw.cchs.bookshop.dto.BuyItem;
 import tw.cchs.bookshop.dto.CreateOrderRequest;
+import tw.cchs.bookshop.dto.OrderQueryParams;
+import tw.cchs.bookshop.model.Order;
 import tw.cchs.bookshop.model.OrderItem;
 import tw.cchs.bookshop.model.Product;
 import tw.cchs.bookshop.model.User;
@@ -89,6 +91,43 @@ public class OrderServiceImpl implements OrderService {
         orderDao.createOrderItems(orderId, orderItemList);
 
         return orderId;
+
+    }
+
+    @Override
+    public Order getOrderById(Integer orderId) {
+
+        Order order = orderDao.getOrderById(orderId);
+
+        List<OrderItem> orderItemList = orderDao.getOrderItemsByOrderId(order.getOrderId());
+
+        order.setOrderItemList(orderItemList);
+
+        return order;
+
+    }
+
+    @Override
+    public List<Order> getOrders(OrderQueryParams orderQueryParams) {
+
+        List<Order> orderList = orderDao.getOrders(orderQueryParams);
+
+        for (Order order : orderList) {
+
+            List<OrderItem> orderItemList = orderDao.getOrderItemsByOrderId(order.getOrderId());
+
+            order.setOrderItemList(orderItemList);
+
+        }
+
+        return orderList;
+
+    }
+
+    @Override
+    public Integer countOrder(OrderQueryParams orderQueryParams) {
+
+        return orderDao.countOrder(orderQueryParams);
 
     }
 
