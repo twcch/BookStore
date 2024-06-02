@@ -56,10 +56,8 @@ This is a simple shopping cart application built using Spring Boot. It provides 
 
 ## Project Structure
 
-1. src/main/java/com/example/shoppingcart - Main application package 
-2. src/main/resources/templates - Thymeleaf templates (HTML)
-3. src/main/resources/static - Static resources (CSS, JavaScript, images)
-4. src/main/resources/application.properties - Application configuration file
+1. src/main/java/tw/cchs/bookstore - Main application package
+2. src/main/resources/application.properties - Application configuration file
 
 ## Contributing
 
@@ -67,12 +65,12 @@ Contributions are welcome! Please fork the repository and create a pull request 
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+N/A
 
 ## Acknowledgements
 
-•	Spring Boot - for providing the framework
-•	Spring Security - for user authentication (coming soon)
+1. Spring Boot - for providing the framework 
+2. Spring Security - for user authentication (coming soon)
 
 ## Contact
 
