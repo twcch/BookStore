@@ -46,13 +46,24 @@ This is a simple shopping cart application built using Spring Boot. It provides 
 
 4. Open your browser and navigate to http://localhost:8080.
 
-## Usage
+## Usage (coming soon)
 
-1.	Register a new user account by clicking on the “Register” link in the navigation bar and filling out the registration form (coming soon).
-2. Log in with your newly created account by clicking on the “Login” link in the navigation bar and entering your credentials (coming soon).
-3.	Add products to your shopping cart by browsing the product list and clicking on the “Add to Cart” button.
-4.	View your cart by clicking on the “Cart” link in the navigation bar.
-5.	Remove products from your cart by clicking on the “Remove” button next to each product in the cart view.
+### Add Products to the Cart
+To add a product to Book Store, send a POST request to:
+```angular2html
+http://localhost:8080/products
+```
+
+with a JSON body containing the product details, for example:
+```json
+{
+  "productName": "Java tutorial",
+  "category": "CHINESE_BOOK",
+  "imageUrl": "http://localhost:8080/",
+  "price": "10",
+  "stock": "5"
+}
+```
 
 ## Project Structure
 
