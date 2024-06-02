@@ -40,3 +40,42 @@ This is a simple shopping cart application built using Spring Boot. It provides 
    ```
 
 3. Run the application:
+   ```angular2html
+   mvn spring-boot:run
+   ```
+
+4. Open your browser and navigate to http://localhost:8080.
+
+## Usage
+
+1.	Register a new user account by clicking on the “Register” link in the navigation bar and filling out the registration form (coming soon).
+2. Log in with your newly created account by clicking on the “Login” link in the navigation bar and entering your credentials (coming soon).
+3.	Add products to your shopping cart by browsing the product list and clicking on the “Add to Cart” button.
+4.	View your cart by clicking on the “Cart” link in the navigation bar.
+5.	Remove products from your cart by clicking on the “Remove” button next to each product in the cart view.
+
+## Project Structure
+
+•	src/main/java/com/example/shoppingcart - Main application package
+•	src/main/resources/templates - Thymeleaf templates (HTML)
+•	src/main/resources/static - Static resources (CSS, JavaScript, images)
+•	src/main/resources/application.properties - Application configuration file
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes. Make sure to follow the project’s coding standards and write tests for any new features or bug fixes.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## Acknowledgements
+
+•	Spring Boot - for providing the framework
+•	Spring Security - for user authentication (coming soon)
+
+## Contact
+
+If you have any questions or suggestions, feel free to reach out to me at [twcch1218@gmail.com](twcch1218@gmail.com).
+
+Happy coding!
