@@ -56,10 +56,10 @@ This is a simple shopping cart application built using Spring Boot. It provides 
 
 ## Project Structure
 
-•	src/main/java/com/example/shoppingcart - Main application package
-•	src/main/resources/templates - Thymeleaf templates (HTML)
-•	src/main/resources/static - Static resources (CSS, JavaScript, images)
-•	src/main/resources/application.properties - Application configuration file
+1. src/main/java/com/example/shoppingcart - Main application package 
+2. src/main/resources/templates - Thymeleaf templates (HTML)
+3. src/main/resources/static - Static resources (CSS, JavaScript, images)
+4. src/main/resources/application.properties - Application configuration file
 
 ## Contributing
 
